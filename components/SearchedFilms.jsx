@@ -12,11 +12,7 @@ export const SearchedFilms = ({ searchedFilms, changeBookmark }) => {
         return (
           <div className="film" key={item.id}>
             <div className="film-image">
-              <img
-                // eslint-disable-next-line no-undef
-                src={`${process.env.PUBLIC_URL}${item.thumbnail.regular.small}`}
-                alt="grid film img"
-              />
+              <img src={item.thumbnail.regular.small} alt="grid film img" />
               <button
                 className="bookmark-btn"
                 onClick={(e) => {
