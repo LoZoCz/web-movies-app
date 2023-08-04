@@ -29,7 +29,7 @@ function App() {
     <Router>
       <Routes>
         <Route
-          path="/"
+          path="/web-movies-app"
           element={<Home movies={movies} changeBookmark={changeBookmark} />}
         />
         <Route
