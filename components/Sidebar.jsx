@@ -12,33 +12,49 @@ import { useState } from "react";
 
 export const Sidebar = () => {
   const [links] = useState({
-    home: '/',
-    movies: '/films',
-    series: '/series',
-    bookmark: '/bookmarked',
+    home: "/web-movies-app",
+    movies: "/films",
+    series: "/series",
+    bookmark: "/bookmarked",
   });
-  
+
   const location = useLocation();
 
   const changeData = (link) => {
-    return link === location.pathname ? "true" : "false"
-  }
+    return link === location.pathname ? "true" : "false";
+  };
 
   return (
     <nav className="nav-bar">
       <div className="upper-options">
         <img src={logo} alt="main-logo-home-btn" />
         <ul className="option-list">
-          <Link to={links.home} className="option" data-active={changeData(links.home)}>
+          <Link
+            to={links.home}
+            className="option"
+            data-active={changeData(links.home)}
+          >
             <FontAwesomeIcon icon={faHouse} />
           </Link>
-          <Link to={links.movies} className="option" data-active={changeData(links.movies)}>
+          <Link
+            to={links.movies}
+            className="option"
+            data-active={changeData(links.movies)}
+          >
             <FontAwesomeIcon icon={faFilm} />
           </Link>
-          <Link to={links.series} className="option" data-active={changeData(links.series)}>
+          <Link
+            to={links.series}
+            className="option"
+            data-active={changeData(links.series)}
+          >
             <FontAwesomeIcon icon={faTv} />
           </Link>
-          <Link to={links.bookmark} className="option" data-active={changeData(links.bookmark)}>
+          <Link
+            to={links.bookmark}
+            className="option"
+            data-active={changeData(links.bookmark)}
+          >
             <FontAwesomeIcon icon={faBookmark} />
           </Link>
         </ul>
