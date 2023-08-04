@@ -1,4 +1,4 @@
-import notFoundLogo from "../assets/not_found.svg";
+import notFoundLogo from "../public/assets/not_found.svg";
 
 export const NoPage = () => {
   return (
