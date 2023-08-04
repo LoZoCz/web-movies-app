@@ -25,7 +25,13 @@ export const Trending = ({ movies, changeBookmark }) => {
               <div
                 className="film"
                 key={crypto.randomUUID()}
-                onClick={() => navigate(`/${item.title.replace( / /g, "-" ).toLowerCase()}`)}
+                onClick={() =>
+                  navigate(
+                    `/web-movies-app/${item.title
+                      .replace(/ /g, "-")
+                      .toLowerCase()}`,
+                  )
+                }
               >
                 <img src={item.thumbnail.trending.small} alt="film image" />
                 <p className="film-info">

@@ -13,9 +13,9 @@ import { useState } from "react";
 export const Sidebar = () => {
   const [links] = useState({
     home: "/web-movies-app",
-    movies: "/films",
-    series: "/series",
-    bookmark: "/bookmarked",
+    movies: "/web-movies-app/films",
+    series: "/web-movies-app/series",
+    bookmark: "/web-movies-app/bookmarked",
   });
 
   const location = useLocation();

@@ -34,7 +34,11 @@ export const SearchedFilms = ({ searchedFilms, changeBookmark }) => {
             <p
               className="film-title"
               onClick={() =>
-                navigate(item.title.replace(/ /g, "-").toLowerCase())
+                navigate(
+                  `/web-movies-app/${item.title
+                    .replace(/ /g, "-")
+                    .toLowerCase()}`,
+                )
               }
             >
               {item.title}

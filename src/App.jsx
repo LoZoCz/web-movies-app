@@ -33,7 +33,7 @@ function App() {
           element={<Home movies={movies} changeBookmark={changeBookmark} />}
         />
         <Route
-          path="/films"
+          path="/web-movies-app/films"
           element={
             <FilmsGrid
               title={"Movies"}
@@ -44,7 +44,7 @@ function App() {
           }
         />
         <Route
-          path="/series"
+          path="/web-movies-app/series"
           element={
             <FilmsGrid
               title={"TV Series"}
@@ -55,7 +55,7 @@ function App() {
           }
         />
         <Route
-          path="/bookmarked"
+          path="/web-movies-app/bookmarked"
           element={
             <BookmarkedGrid
               title={"Your bookmarked"}
@@ -70,7 +70,9 @@ function App() {
           return (
             <Route
               key={item.id}
-              path={`/${item.title.replace(/ /g, "-").toLowerCase()}`}
+              path={`/web-movies-app/${item.title
+                .replace(/ /g, "-")
+                .toLowerCase()}`}
               element={
                 <MovieSite movie={item} changeBookmark={changeBookmark} />
               }
