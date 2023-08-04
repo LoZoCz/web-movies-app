@@ -4,15 +4,19 @@ import PropTypes from "prop-types";
 import "../scss/filter-box.scss";
 import { useNavigate } from "react-router-dom";
 
-export const SearchedFilms = ( { searchedFilms, changeBookmark } ) => {
-  const navigate = useNavigate()
+export const SearchedFilms = ({ searchedFilms, changeBookmark }) => {
+  const navigate = useNavigate();
   return (
     <div className="filter-divs">
       {searchedFilms.map((item) => {
         return (
           <div className="film" key={item.id}>
             <div className="film-image">
-              <img src={item.thumbnail.regular.small} alt="grid film img" />
+              <img
+                // eslint-disable-next-line no-undef
+                src={`${process.env.PUBLIC_URL}${item.thumbnail.regular.small}`}
+                alt="grid film img"
+              />
               <button
                 className="bookmark-btn"
                 onClick={(e) => {
@@ -31,7 +35,14 @@ export const SearchedFilms = ( { searchedFilms, changeBookmark } ) => {
               />{" "}
               {item.category} &bull; {item.rating}
             </p>
-            <p className="film-title" onClick={() => navigate(item.title.replace( / /g, "-" ).toLowerCase())}>{item.title}</p>
+            <p
+              className="film-title"
+              onClick={() =>
+                navigate(item.title.replace(/ /g, "-").toLowerCase())
+              }
+            >
+              {item.title}
+            </p>
           </div>
         );
       })}
