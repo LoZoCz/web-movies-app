@@ -1,0 +1,37 @@
+@import "clrs-fonts.scss";
+
+.serach-inp-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  .search-btn {
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: $prim-clr-3;
+    cursor: pointer;
+    transition: color ease-in-out 200ms;
+
+    &:hover {
+      color: $prim-clr-4;
+    }
+  }
+
+  .search-inp {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: $prim-clr-4;
+    font-size: 1.75rem;
+    transition: border-bottom ease-in-out 200ms;
+
+    &::placeholder {
+      color: $prim-clr-3;
+    }
+  }
+}

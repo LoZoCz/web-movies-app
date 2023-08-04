@@ -1,0 +1,68 @@
+@import "./clrs-fonts.scss";
+
+.main-film-cont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  place-items: center;
+
+  img {
+    display: block;
+    width: 100%;
+    border-radius: 1rem;
+  }
+
+  .film-info-wrapper {
+    .film-title {
+      margin: 0;
+      font-size: 3rem;
+    }
+
+    .film-desc {
+      width: 45ch;
+    }
+
+    .bookmark-btn {
+      background-color: $prim-clr-2-trans;
+      color: $prim-clr-3;
+      height: fit-content;
+      border-radius: 1rem;
+      padding: 10px 15px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: color ease-in-out 200ms;
+
+      &[data-marked="true"] {
+        color: $prim-clr-4;
+      }
+
+      &:hover {
+        color: $prim-clr-4;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main-film-cont {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    img {
+      width: 60vw !important;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main-film-cont {
+    img {
+      width: calc(100vw - 4rem) !important;
+    }
+
+    .film-desc {
+      width: auto !important;
+    }
+  }
+}

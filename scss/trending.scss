@@ -1,0 +1,88 @@
+@import "clrs-fonts.scss";
+
+.trending-wrapper {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+
+  &::-webkit-scrollbar {
+    height: 0.45rem; /* Szerokość scrollbaru */
+  }
+
+  .films-slider {
+    display: grid;
+    grid-template-rows: 15rem;
+    gap: 2rem;
+
+    .film > *:not(img) {
+      position: absolute;
+      z-index: 2;
+    }
+
+    .film {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 1rem;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          0deg,
+          rgba(16, 20, 30, 1) 0%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        z-index: 1;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+      }
+
+      .film-title {
+        bottom: 1rem;
+        left: 1rem;
+        margin: 0;
+        font-size: 1.1rem;
+      }
+
+      .film-info {
+        bottom: 3rem;
+        left: 1rem;
+        margin: 0;
+        font-size: 0.9rem;
+        color: lighten($prim-clr-3, 20%);
+      }
+
+      .bookmark-btn {
+        top: 1rem;
+        right: 1rem;
+        background-color: $prim-clr-1-trans;
+        color: $prim-clr-3;
+        border-radius: 50%;
+        width: 2rem;
+        aspect-ratio: 1;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: color ease-in-out 200ms;
+
+        &[data-marked="true"] {
+          color: $prim-clr-4;
+        }
+
+        &:hover {
+          color: $prim-clr-4;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@import "./clrs-fonts.scss";
+
+.filter-divs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+
+  .film {
+    display: grid;
+    grid-template-rows: 1fr 1rem 1.2rem;
+    gap: 10px;
+
+    .film-image {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+      }
+
+      .bookmark-btn {
+        top: 1rem;
+        right: 1rem;
+        background-color: $prim-clr-1-trans;
+        color: $prim-clr-3;
+        border-radius: 50%;
+        width: 2rem;
+        aspect-ratio: 1;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: color ease-in-out 200ms;
+
+        &[data-marked="true"] {
+          color: $prim-clr-4;
+        }
+
+        &:hover {
+          color: $prim-clr-4;
+        }
+      }
+    }
+
+    .film-image > *:not(img) {
+      position: absolute;
+    }
+
+    .film-title {
+      margin: 0;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .film-info {
+      margin: 0;
+      font-size: 0.9rem;
+      color: lighten($prim-clr-3, 20%);
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .filter-divs {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .filter-divs {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}

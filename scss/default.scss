@@ -1,0 +1,95 @@
+@import "./clrs-fonts.scss";
+
+* {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-name, system-ui, sans-serif;
+  background-color: $prim-clr-1;
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0;
+  padding: 2rem;
+  scroll-behavior: smooth;
+}
+
+#root {
+  padding-left: 8rem;
+}
+
+@media screen and (max-width: 1000px) {
+  #root {
+    padding-left: 0;
+    padding-top: 8rem;
+  }
+}
+
+#root:has(.main-film-cont) {
+  height: calc(100vh - 4rem);
+  display: grid;
+  gap: 1rem;
+}
+
+#root:has(.not-found-logo) {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 4rem);
+  gap: 2rem;
+
+  .not-found-logo {
+    width: 20rem;
+  }
+
+  .not-found-title {
+    font-size: 4rem;
+    margin: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.75rem; /* Szerokość scrollbaru */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Kolor scrollbara */
+  border-radius: 0.5rem; /* Zaokrąglenie narożników scrollbara */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa; /* Kolor scrollbara po najechaniu */
+  cursor: pointer;
+}
+
+/* Ukrywanie strzałek w scrollbarze */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Stylowanie scrollbarów dla przeglądarki Firefox */
+::-moz-scrollbar {
+  width: 0.75rem; /* Szerokość scrollbaru */
+}
+
+::-moz-scrollbar-thumb {
+  background-color: #ccc; /* Kolor scrollbara */
+  border-radius: 0.25rem; /* Zaokrąglenie narożników scrollbara */
+}
+
+::-moz-scrollbar-thumb:hover {
+  background-color: #aaa; /* Kolor scrollbara po najechaniu */
+  cursor: pointer;
+}
+
+/* Ukrywanie strzałek w scrollbarze dla przeglądarki Firefox */
+::-moz-scrollbar-button {
+  display: none;
+}

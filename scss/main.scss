@@ -1,0 +1,18 @@
+@import "./scss/clrs-fonts.scss";
+
+.main-cont {
+  display: grid;
+  grid-template-rows: 3rem 1fr;
+  gap: 2rem;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  .home-divs {
+    display: grid;
+    grid-template-rows: auto 2fr;
+    gap: 2rem;
+  }
+}
