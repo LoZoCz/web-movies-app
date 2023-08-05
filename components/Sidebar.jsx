@@ -9,6 +9,7 @@ import {
 import "../scss/nav-bar.scss";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import userPfp from "../public/assets/user.png";
 
 export const Sidebar = () => {
   const [links] = useState({
@@ -59,7 +60,7 @@ export const Sidebar = () => {
           </Link>
         </ul>
       </div>
-      <img src="assets/user.png" alt="user pfp" className="user-pfp" />
+      <img src={userPfp} alt="user pfp" className="user-pfp" />
     </nav>
   );
 };

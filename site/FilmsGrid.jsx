@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark, faFilm, faTv } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
-export const FilmsGrid = ( { title, filter, movies, changeBookmark } ) => {
-  const navigate = useNavigate()
+export const FilmsGrid = ({ title, filter, movies, changeBookmark }) => {
+  const navigate = useNavigate();
 
   return (
     <>
@@ -43,7 +43,18 @@ export const FilmsGrid = ( { title, filter, movies, changeBookmark } ) => {
                     />{" "}
                     {item.category} &bull; {item.rating}
                   </p>
-                  <p className="film-title" onClick={() => navigate(`/${item.title.replace( / /g, "-" ).toLowerCase()}`)}>{item.title}</p>
+                  <p
+                    className="film-title"
+                    onClick={() =>
+                      navigate(
+                        `/web-movies-app/${item.title
+                          .replace(/ /g, "-")
+                          .toLowerCase()}`,
+                      )
+                    }
+                  >
+                    {item.title}
+                  </p>
                 </div>
               );
             })}
