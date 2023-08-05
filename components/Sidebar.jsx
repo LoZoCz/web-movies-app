@@ -59,9 +59,7 @@ export const Sidebar = () => {
           </Link>
         </ul>
       </div>
-      <img src="assets/image-avatar.png" alt="user pfp" className="user-pfp" />
+      <img src="assets/user.png" alt="user pfp" className="user-pfp" />
     </nav>
   );
 };
-
-// linki zrobic
